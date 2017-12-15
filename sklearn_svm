@@ -1,0 +1,13 @@
+import numpy as np
+from sklearn.svm import SVC
+
+# train set
+x_train = np.array([(1, 1), (1, 3), (3, 1), (2, 2)])
+y_train = np.array([1, 1, 2, 2])
+
+# set svm parameters
+clf = SVC(C=1.0, kernel='linear', probability=True)
+clf.fit(x_train, y_train)
+print(clf.fit(x_train, y_train))
+print(clf.predict([[3, 1]]))
+print(clf.predict_proba([[3, 1]]))
